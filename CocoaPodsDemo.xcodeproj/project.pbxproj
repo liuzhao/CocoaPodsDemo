@@ -17,6 +17,7 @@
 		2529894E1BBA4089009EDE83 /* CocoaPodsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2529894D1BBA4089009EDE83 /* CocoaPodsDemoTests.m */; };
 		252989591BBA4089009EDE83 /* CocoaPodsDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 252989581BBA4089009EDE83 /* CocoaPodsDemoUITests.m */; };
 		252989681BBA65BE009EDE83 /* ZPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 252989671BBA65BE009EDE83 /* ZPService.m */; settings = {ASSET_TAGS = (); }; };
+		258E3FE01BC55F00001586C5 /* 1024x1024ss-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 258E3FDF1BC55F00001586C5 /* 1024x1024ss-80.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2529895A1BBA4089009EDE83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		252989661BBA65BE009EDE83 /* ZPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPService.h; sourceTree = "<group>"; };
 		252989671BBA65BE009EDE83 /* ZPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPService.m; sourceTree = "<group>"; };
+		258E3FDF1BC55F00001586C5 /* 1024x1024ss-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1024x1024ss-80.png"; sourceTree = "<group>"; };
 		2C874A4F170A2C81C0894EE4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9488D76E7BA3C2F2B2D11CF6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B1BB970F4FAF130F831E2D52 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 		252989331BBA4089009EDE83 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				258E3FDF1BC55F00001586C5 /* 1024x1024ss-80.png */,
 				252989341BBA4089009EDE83 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -276,6 +279,7 @@
 			files = (
 				252989431BBA4089009EDE83 /* LaunchScreen.storyboard in Resources */,
 				252989401BBA4089009EDE83 /* Assets.xcassets in Resources */,
+				258E3FE01BC55F00001586C5 /* 1024x1024ss-80.png in Resources */,
 				2529893E1BBA4089009EDE83 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,9 @@
 #import <MQTTKit.h>
 #import <FMDB.h>
 
-@interface ViewController ()
+@interface ViewController () {
+    FMDatabase *_db;
+}
 
 @end
 
@@ -22,9 +24,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self requestService];
+//    [self requestService];
     
 //    [self MQTTService];
+    
+    [self fmdbTest];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    [btn setFrame:CGRectMake(100, 100, 50, 50)];
+    [btn addTarget:self action:@selector(updateBase) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,7 +88,58 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
     NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"MyDatabase.db"];
-    FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:dbPath];
+//    FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:dbPath];
+    
+    NSLog(@"dbPath:%@",dbPath);
+    
+    /* 创建数据库 */
+    _db = [FMDatabase databaseWithPath:dbPath];
+    
+    if (![_db open]) {
+        // error
+        return;
+    }
+    // some operation
+    // ...
+    
+    /* 创建Table */
+//    BOOL isSuccess = [db executeUpdate:@"CREATE TABLE PersonList (Name text, Age integer, Sex integer, Phone text, Address text, Photo blob)"];
+//    if (isSuccess) {
+//        UIImage *image = [UIImage imageNamed:@"1024x1024ss-80.png"];
+//        NSData *data = UIImageJPEGRepresentation(image, 1.0);
+//        [db executeUpdate:@"INSERT INTO PersonList (Name, Age, Sex, Phone, Address, Photo) VALUES (?,?,?,?,?,?)",@"Jone", [NSNumber numberWithInt:20], [NSNumber numberWithInt:0], @"091234567", @"Taiwan, R.O.C", data];
+//    }
+    
+//    UIImage *image = [UIImage imageNamed:@"1024x1024ss-80.png"];
+//    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+//    BOOL isUpdate = [db executeUpdate:@"INSERT INTO PersonList (Name, Age, Sex, Phone, Address, Photo) VALUES (?,?,?,?,?,?)",@"Jone", [NSNumber numberWithInt:20], [NSNumber numberWithInt:0], @"091234567", @"Taiwan, R.O.C", data];
+//    NSLog(@"isUpdate:%d",isUpdate);
+//    
+    
+    
+    
+//    [_db close];
+}
+
+- (void)updateBase
+{
+//    [_db executeUpdate:@"UPDATE PersonList SET Age = ? WHERE Name = ?",[NSNumber numberWithInt:30],@"Jone"];
+    
+//    FMResultSet *rs = [_db executeQuery:@"SELECT Name, Age, FROM PersonList"];
+//    
+//    while ([rs next]) {
+//        NSString *name = [rs stringForColumn:@"Name"];
+//        int age = [rs intForColumn:@"Age"];
+//        NSLog(@"name:%@,age:%d",name, age);
+//    }
+//    
+//    [rs close];
+
+    NSString *address = [_db stringForQuery:@"SELECT Address FROM PersonList WHERE Name = ?",@"Jone"];
+    int age = [_db intForQuery:@"SELECT Age FROM PersonList WHERE Name = ?",@"Jone"];
+    NSLog(@"address:%@, age:%d",address, age);
+    
+//    [_db close];
 }
 
 @end
